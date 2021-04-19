@@ -1,0 +1,1 @@
+mongodb+srv://PiyushGarg:<password>@cluster0.iyima.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
