@@ -44,6 +44,8 @@ userSchema.pre('save', async function( next ) {
     next();
 })
 
+//change this and instead of saving this inside the DB, send this inside
+//headers.
 userSchema.methods.generateAuthToken = async function (){
     try{
         let token = jwt.sign({_id: this._id},process.env.SECRET_KEY)

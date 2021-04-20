@@ -38,6 +38,10 @@ router.post('/login',  (req,res) => {
             if(bcrypt.compare(password, userExist.password)){
                 const token = userExist.generateAuthToken()
                 .then((token) => {
+                res.cookie('jwtToken', token, {
+                    maxAge: 25892000000,
+                    httpOnly: true
+                })    
                 res.status(201).json({message: `Welcome ${userExist.name}`})
                 })
                 .catch(err => console.log(err));
